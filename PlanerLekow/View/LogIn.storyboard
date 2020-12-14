@@ -11,7 +11,7 @@
         <!--Log In Controller-->
         <scene sceneID="vkN-Jq-hol">
             <objects>
-                <viewController storyboardIdentifier="LogIN" id="eAh-ev-pj1" customClass="LogInController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogIN" modalPresentationStyle="fullScreen" id="eAh-ev-pj1" customClass="LogInController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhi-Zy-CmF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="91" y="290" width="232" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nazwa użytkownika" textAlignment="center" minimumFontSize="17" background="nameHolder" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-Ch-Bdf">
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nazwa użytkownika" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="nameHolder" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-Ch-Bdf">
                                 <rect key="frame" x="54" y="348" width="307" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -33,6 +33,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hasło" textAlignment="center" minimumFontSize="17" background="passHolder" translatesAutoresizingMaskIntoConstraints="NO" id="p2s-ZR-m21">
                                 <rect key="frame" x="54" y="477" width="307" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

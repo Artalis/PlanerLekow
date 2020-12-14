@@ -17,7 +17,8 @@ class DrugTableViewCell: UITableViewCell {
 
 class DrugsTableViewController: UITableViewController {
     
-    let drugsList = ["Apap", "Witamina C"]
+    var userDrugList = [UserDrugs]()
+    var drugList = [Drug]()
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,21 +26,33 @@ class DrugsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return drugsList.count
+        print(userDrugList.count)
+        return userDrugList.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(userDrugList)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrugCell", for: indexPath) as! DrugTableViewCell
 
-        let drug = drugsList[indexPath.row]
+        let drug = userDrugList[indexPath.row].name
         cell.label?.text = drug
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("row: \(indexPath.row)")
+        for drug in drugList{
+            if(drug.name == userDrugList[indexPath.row].name){
+                let storyboard = UIStoryboard(name: "drugs_list", bundle: nil)
+                let secondVC = storyboard.instantiateViewController(identifier: "drugDetail") as! DrugDetailController
+                
+                secondVC.drug = drug
+                self.present(secondVC, animated: true, completion: nil)
+            }
+        }
+        
+        
     }
 }

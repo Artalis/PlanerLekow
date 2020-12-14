@@ -21,7 +21,9 @@ class SignInController: UIViewController {
         if(checkData(username: nameField.text, password: passField1.text, password2: passField2.text)){
             completeList(completion: { (status) in
                 if (status){
-                    self.navigationController?.popViewController(animated: true)
+                    let storyboard = UIStoryboard(name: "LogIn", bundle: nil)
+                    let secondVC = storyboard.instantiateViewController(identifier: "LogIN")
+                    self.present(secondVC, animated: true, completion: nil)
                 }
             })
         }else{

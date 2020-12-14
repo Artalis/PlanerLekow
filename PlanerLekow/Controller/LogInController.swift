@@ -33,7 +33,8 @@ class LogInController: UIViewController {
             completeList { (status) in
                 if (status){
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let secondVC = storyboard.instantiateViewController(identifier: "main_menu")
+                    let secondVC = storyboard.instantiateViewController(identifier: "main_menu") as! ViewController
+                    secondVC.user = self.nameField.text
                     self.present(secondVC, animated: true, completion: nil)
                 }else{
                     self.errorMessage.textColor = UIColor.red
