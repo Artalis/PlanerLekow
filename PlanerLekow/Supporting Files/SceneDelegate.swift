@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
 
         let mainstoryboard:UIStoryboard = UIStoryboard(name: "LogIn", bundle: nil)
-        let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "LogIN") as! ViewController
+        let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "LogIN") as! LogInController
         window.rootViewController = newViewcontroller
         window.makeKeyAndVisible()
     }

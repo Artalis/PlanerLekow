@@ -60,15 +60,124 @@
                                 <rect key="frame" x="91" y="698" width="232" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="register"/>
+                                <connections>
+                                    <segue destination="RmG-Ce-C9E" kind="show" id="wR9-8a-PGw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7mg-NW-cXB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dAo-sJ-ayk" appends="YES" id="JnH-Bf-4vp"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="errorMessage" destination="WGe-Gb-nK3" id="3mW-Ms-T9H"/>
+                        <outlet property="nameField" destination="dJn-Ch-Bdf" id="V8m-Aq-dfT"/>
+                        <outlet property="passField" destination="p2s-ZR-m21" id="Qxn-EY-PBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mD-SO-3iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dAo-sJ-ayk">
+                    <connections>
+                        <action selector="returnKeyboard:" destination="eAh-ev-pj1" id="eBE-cq-Jmx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-130.43478260869566" y="55.580357142857139"/>
+        </scene>
+        <!--Sign In Controller-->
+        <scene sceneID="QHN-kt-F0T">
+            <objects>
+                <viewController modalPresentationStyle="formSheet" id="RmG-Ce-C9E" customClass="SignInController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lNA-ci-MaO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nazwa użytkownika" textAlignment="center" minimumFontSize="17" background="nameHolder" translatesAutoresizingMaskIntoConstraints="NO" id="48j-E2-8u6">
+                                <rect key="frame" x="54" y="308" width="307" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="x8M-8g-z64">
+                                <rect key="frame" x="54" y="42" width="307" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hasło" textAlignment="center" minimumFontSize="17" background="passHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Atv-FG-AxA">
+                                <rect key="frame" x="54" y="418" width="307" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hasło" textAlignment="center" minimumFontSize="17" background="passHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Gn5-m1-acw">
+                                <rect key="frame" x="54" y="549" width="307" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrx-KK-Htv">
+                                <rect key="frame" x="91" y="712" width="232" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="register"/>
+                                <connections>
+                                    <action selector="signInButton:" destination="RmG-Ce-C9E" eventType="touchUpInside" id="Chq-QP-iPo"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFj-KZ-Xo7">
+                                <rect key="frame" x="54" y="615" width="307" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wprowadź nazwę użytkownika:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxA-vR-K9Z">
+                                <rect key="frame" x="37" y="279" width="341" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wprowadź hasło:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewh-MK-QDQ">
+                                <rect key="frame" x="37" y="389" width="341" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wprowadź ponownie hasło:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdB-Ov-Urr">
+                                <rect key="frame" x="37" y="520" width="341" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nv1-5L-gSC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="s4t-AZ-I7G" appends="YES" id="rR9-sw-bx5"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="8dG-0V-nwh"/>
+                    <connections>
+                        <outlet property="errorMessage" destination="IFj-KZ-Xo7" id="zD1-Te-sdt"/>
+                        <outlet property="nameField" destination="48j-E2-8u6" id="IGB-K3-5hB"/>
+                        <outlet property="passField1" destination="Atv-FG-AxA" id="33s-gh-6OU"/>
+                        <outlet property="passField2" destination="Gn5-m1-acw" id="8Ih-I1-4hu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHH-oS-msK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="s4t-AZ-I7G">
+                    <connections>
+                        <action selector="tapAnywhere:" destination="RmG-Ce-C9E" id="rPm-mM-BLo"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="563.768115942029" y="55.580357142857139"/>
         </scene>
     </scenes>
     <resources>

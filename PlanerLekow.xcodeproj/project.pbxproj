@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		3E24E4E62582A17400473B60 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E24E4E52582A17400473B60 /* LogInController.swift */; };
 		3E24E4E92582A1A000473B60 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E24E4E82582A19F00473B60 /* LogIn.storyboard */; };
 		3E24E4EC2582B04000473B60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E24E4EB2582B04000473B60 /* GoogleService-Info.plist */; };
+		3E24E4FC2582C35B00473B60 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E24E4FB2582C35B00473B60 /* SignInController.swift */; };
 		3E62FAA52574121100BAFFA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62FAA42574121100BAFFA0 /* AppDelegate.swift */; };
 		3E62FAA92574121100BAFFA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62FAA82574121100BAFFA0 /* ViewController.swift */; };
 		3E62FAAC2574121100BAFFA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62FAAA2574121100BAFFA0 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		3E62FB542574732400BAFFA0 /* drugs_list.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E62FB532574732400BAFFA0 /* drugs_list.storyboard */; };
 		3E62FB592574754500BAFFA0 /* ViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62FB582574754500BAFFA0 /* ViewListController.swift */; };
 		3E62FB7525747B7000BAFFA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E62FB7425747B7000BAFFA0 /* SceneDelegate.swift */; };
+		C22B53363C2B8BD171DAF08B /* Pods_PlanerLekow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E581636A0B6364564DB74A0 /* Pods_PlanerLekow.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 		3E24E4E52582A17400473B60 /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		3E24E4E82582A19F00473B60 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		3E24E4EB2582B04000473B60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E24E4FB2582C35B00473B60 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		3E62FAA12574121100BAFFA0 /* PlanerLekow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanerLekow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E62FAA42574121100BAFFA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E62FAA82574121100BAFFA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +45,9 @@
 		3E62FB532574732400BAFFA0 /* drugs_list.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = drugs_list.storyboard; sourceTree = "<group>"; };
 		3E62FB582574754500BAFFA0 /* ViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewListController.swift; sourceTree = "<group>"; };
 		3E62FB7425747B7000BAFFA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5326D38255FD440F332DE2A1 /* Pods-PlanerLekow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanerLekow.release.xcconfig"; path = "Target Support Files/Pods-PlanerLekow/Pods-PlanerLekow.release.xcconfig"; sourceTree = "<group>"; };
+		6E581636A0B6364564DB74A0 /* Pods_PlanerLekow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanerLekow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9457167377583C0CB12EC2AB /* Pods-PlanerLekow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanerLekow.debug.xcconfig"; path = "Target Support Files/Pods-PlanerLekow/Pods-PlanerLekow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22B53363C2B8BD171DAF08B /* Pods_PlanerLekow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +67,8 @@
 			children = (
 				3E62FAA32574121100BAFFA0 /* PlanerLekow */,
 				3E62FAA22574121100BAFFA0 /* Products */,
+				D77CA56ADA6744585A1CDEA0 /* Pods */,
+				B23A798A9B8340937E935014 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +121,7 @@
 				3E62FAA82574121100BAFFA0 /* ViewController.swift */,
 				3E62FB582574754500BAFFA0 /* ViewListController.swift */,
 				3E24E4E52582A17400473B60 /* LogInController.swift */,
+				3E24E4FB2582C35B00473B60 /* SignInController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +136,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B23A798A9B8340937E935014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E581636A0B6364564DB74A0 /* Pods_PlanerLekow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D77CA56ADA6744585A1CDEA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9457167377583C0CB12EC2AB /* Pods-PlanerLekow.debug.xcconfig */,
+				5326D38255FD440F332DE2A1 /* Pods-PlanerLekow.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E62FACB2574121400BAFFA0 /* Build configuration list for PBXNativeTarget "PlanerLekow" */;
 			buildPhases = (
+				FFC2165E4792F5C42742F965 /* [CP] Check Pods Manifest.lock */,
 				3E62FA9D2574121100BAFFA0 /* Sources */,
 				3E62FA9E2574121100BAFFA0 /* Frameworks */,
 				3E62FA9F2574121100BAFFA0 /* Resources */,
+				814C9A36B20B11663E31FAF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +223,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		814C9A36B20B11663E31FAF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanerLekow/Pods-PlanerLekow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanerLekow/Pods-PlanerLekow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanerLekow/Pods-PlanerLekow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFC2165E4792F5C42742F965 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanerLekow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E62FA9D2574121100BAFFA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,6 +273,7 @@
 				3E62FB2825746C6100BAFFA0 /* UserDrugs.swift in Sources */,
 				3E62FAA92574121100BAFFA0 /* ViewController.swift in Sources */,
 				3E62FAA52574121100BAFFA0 /* AppDelegate.swift in Sources */,
+				3E24E4FC2582C35B00473B60 /* SignInController.swift in Sources */,
 				3E62FB18257464A000BAFFA0 /* Drug.swift in Sources */,
 				3E24E4E62582A17400473B60 /* LogInController.swift in Sources */,
 				3E24E4E32582959000473B60 /* Parser.swift in Sources */,
@@ -351,6 +423,7 @@
 		};
 		3E62FACC2574121400BAFFA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9457167377583C0CB12EC2AB /* Pods-PlanerLekow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -370,6 +443,7 @@
 		};
 		3E62FACD2574121400BAFFA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5326D38255FD440F332DE2A1 /* Pods-PlanerLekow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
