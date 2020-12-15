@@ -16,6 +16,9 @@ import FirebaseFirestore
 
 class LogInController: UIViewController {
     
+    
+ 
+    
    
     private let collection = Firestore.firestore().collection("users")
     
@@ -32,6 +35,9 @@ class LogInController: UIViewController {
         if(checkData(username: nameField.text, password: passField.text)){
             completeList { (status) in
                 if (status){
+                    
+                    UserDefaults.standard.set(self.nameField.text, forKey: "userName")
+                    
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let secondVC = storyboard.instantiateViewController(identifier: "main_menu") as! ViewController
                     secondVC.user = self.nameField.text

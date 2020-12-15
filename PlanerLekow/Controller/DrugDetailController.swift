@@ -11,6 +11,10 @@ import AVFoundation
 
 class DrugDetailController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var userDrugList = [UserDrugs]()
+    var drugList = [Drug]()
+    var user:String?
+    
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
     
@@ -50,7 +54,9 @@ class DrugDetailController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        if(synth.isSpeaking){
+            synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+        }
         switch row {
         case 0:
             textField.text = drug?.purpose
@@ -79,6 +85,17 @@ class DrugDetailController: UIViewController, UIPickerViewDelegate, UIPickerView
             synth.speak(myUtterance)
         }
         
+    }
+    
+    @IBAction func goBack(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "drugs_list", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "drug_list") as! DrugsTableViewController
+        
+        secondVC.drugList = drugList
+        secondVC.userDrugList = userDrugList
+        secondVC.user = user
+        self.present(secondVC, animated: true, completion: nil)
     }
     
     

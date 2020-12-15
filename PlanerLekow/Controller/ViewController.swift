@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
   
     @IBAction func my_drugs(_ sender: Any) {
-        
+        user  = UserDefaults.standard.string(forKey: "userName") ?? "there is not such user"
         drugListPrepare { (status) in
             if(status){
                 self.userDrugListPrepare { (status2) in
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
                         let storyboard = UIStoryboard(name: "drugs_list", bundle: nil)
                         let secondVC = storyboard.instantiateViewController(identifier: "drug_list") as! DrugsTableViewController
                         secondVC.drugList = self.drugList
+                        secondVC.user = self.user
                         secondVC.userDrugList = self.userDrugList
                         self.present(secondVC, animated: true, completion: nil)
                         
@@ -77,6 +78,15 @@ class ViewController: UIViewController {
         }
              
     }
+    
+    @IBAction func settingsButton(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "userName")
+        let storyboard = UIStoryboard(name: "LogIn", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "LogIN") as! LogInController
+        self.present(secondVC, animated: true, completion: nil)
+    
+    }
+    
 }
     
     

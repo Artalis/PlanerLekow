@@ -19,6 +19,7 @@ class DrugsTableViewController: UITableViewController {
     
     var userDrugList = [UserDrugs]()
     var drugList = [Drug]()
+    var user:String?
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,13 +27,11 @@ class DrugsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(userDrugList.count)
         return userDrugList.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(userDrugList)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrugCell", for: indexPath) as! DrugTableViewCell
 
@@ -47,12 +46,23 @@ class DrugsTableViewController: UITableViewController {
             if(drug.name == userDrugList[indexPath.row].name){
                 let storyboard = UIStoryboard(name: "drugs_list", bundle: nil)
                 let secondVC = storyboard.instantiateViewController(identifier: "drugDetail") as! DrugDetailController
-                
+                secondVC.user = user
                 secondVC.drug = drug
+                secondVC.drugList = drugList
+                secondVC.userDrugList = userDrugList
                 self.present(secondVC, animated: true, completion: nil)
             }
         }
         
         
     }
+    
+    @IBAction func gestureback(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "main_menu") as! ViewController
+        
+        secondVC.user = user
+        self.present(secondVC, animated: true, completion: nil)
+    }
+    
 }

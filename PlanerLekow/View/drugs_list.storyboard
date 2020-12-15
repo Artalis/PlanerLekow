@@ -11,14 +11,25 @@
         <!--Drugs Table View Controller-->
         <scene sceneID="2rc-9R-kcj">
             <objects>
-                <tableViewController storyboardIdentifier="drug_list" id="U6y-GC-Clo" customClass="DrugsTableViewController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="drug_list" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="U6y-GC-Clo" customClass="DrugsTableViewController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="CAd-li-ggg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="CuD-Ng-ZCF">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="INr-fD-9eU">
+                                    <rect key="frame" x="146" y="8" width="123" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </pageControl>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrugCell" rowHeight="89" id="pCA-Cb-uT2" customClass="DrugTableViewCell" customModule="PlanerLekow" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pCA-Cb-uT2" id="52N-tw-FWk">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
@@ -43,6 +54,7 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="label" destination="XUQ-5v-Dly" id="oun-UE-g3f"/>
                                 </connections>
@@ -51,36 +63,42 @@
                         <connections>
                             <outlet property="dataSource" destination="U6y-GC-Clo" id="wPe-hK-9pp"/>
                             <outlet property="delegate" destination="U6y-GC-Clo" id="cDV-He-Pe8"/>
+                            <outletCollection property="gestureRecognizers" destination="Hgp-oz-xqY" appends="YES" id="fXd-ng-66E"/>
                         </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6d-5l-Pmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Hgp-oz-xqY">
+                    <connections>
+                        <action selector="gestureback:" destination="U6y-GC-Clo" id="OFx-Cc-DUx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="254" y="-2596"/>
         </scene>
         <!--Drug Detail Controller-->
         <scene sceneID="B3b-dB-U3e">
             <objects>
-                <viewController storyboardIdentifier="drugDetail" id="x1w-Wx-dB8" customClass="DrugDetailController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="drugDetail" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="x1w-Wx-dB8" customClass="DrugDetailController" customModule="PlanerLekow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzL-tJ-Z2l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R14-od-dcM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="117"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="117"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Z-Sm-V9T">
-                                <rect key="frame" x="20" y="169" width="374" height="479"/>
+                                <rect key="frame" x="20" y="217" width="374" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmQ-JZ-yhC">
-                                <rect key="frame" x="72" y="656.5" width="270" height="143"/>
+                                <rect key="frame" x="72" y="731.5" width="270" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" backgroundImage="speaker.wave.3.fill" catalog="system">
@@ -90,9 +108,17 @@
                                     <action selector="speakerButton:" destination="x1w-Wx-dB8" eventType="touchUpInside" id="Qmp-1I-cGT"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-Vx-xRW">
+                                <rect key="frame" x="146" y="72" width="123" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3yH-ha-epN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Of9-J2-HRu" appends="YES" id="xkp-GG-zdc"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="picker" destination="R14-od-dcM" id="qxy-Ck-QiK"/>
@@ -100,6 +126,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NuO-2o-fXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Of9-J2-HRu">
+                    <connections>
+                        <action selector="goBack:" destination="x1w-Wx-dB8" id="TXx-4v-phT"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="942.02898550724649" y="-2596.2053571428569"/>
         </scene>
@@ -113,6 +144,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

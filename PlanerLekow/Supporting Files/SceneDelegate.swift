@@ -11,16 +11,38 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let name: String = UserDefaults.standard.string(forKey: "userName") ?? "there is not such user"
+        
+        
+        if (name != "there is not such user"){
+            guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let window = UIWindow(windowScene: windowScene)
-        self.window = window
+            let window = UIWindow(windowScene: windowScene)
+            self.window = window
 
-        let mainstoryboard:UIStoryboard = UIStoryboard(name: "LogIn", bundle: nil)
-        let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "LogIN") as! LogInController
-        window.rootViewController = newViewcontroller
-        window.makeKeyAndVisible()
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "main_menu") as! ViewController
+            window.rootViewController = newViewcontroller
+            window.makeKeyAndVisible()
+            
+        }else{
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+
+            
+            
+            let window = UIWindow(windowScene: windowScene)
+            self.window = window
+
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "LogIn", bundle: nil)
+            let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "LogIN") as! LogInController
+            window.rootViewController = newViewcontroller
+            window.makeKeyAndVisible()
+        }
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
